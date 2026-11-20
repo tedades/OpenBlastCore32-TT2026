@@ -1,24 +1,24 @@
 # Tiny Tapeout project information
 project:
-  title:        "OpenBlastCore32-TT08"
+  title:        "OpenBlastCore32-TT16"
   author:       "OpenBlastCore32 contributors"
   discord:      ""
-  description:  "32-bit CPU with shared cartridge memory and 1bpp VGA scanout candidate"
+  description:  "32-bit CPU using QSPI (16MB Flash + 8MB PSRAM), Audio (mono), SNES controller (2x), VGA (6bit color per pixel) and optional PS/2 (for keyboard) PMOD."
   language:     "Verilog"
   clock_hz:     50000000
 
-  tiles: "4x2"
+  tiles: "4x4"
 
-  top_module:  "tt_um_openblastcore32_tt08"
+  top_module:  "tt_um_openblastcore32_tt16"
 
   source_files:
-    - "tt_um_openblastcore32_tt08.v"
-    - "tt08_cpu.v"
-    - "tt08_handoff.v"
-    - "tt08_memory.v"
-    - "tt08_psram.v"
-    - "tt08_scanout.v"
-    - "tt08_minimal_audio.v"
+    - "tt_um_openblastcore32_tt16.v"
+    - "tt16_cpu.v"
+    - "tt16_handoff.v"
+    - "tt16_memory.v"
+    - "tt16_psram.v"
+    - "tt16_scanout.v"
+    - "tt16_minimal_audio.v"
     - "phase2_gamepad_io.v"
     - "vendor/gamepad_pmod/gamepad_pmod.v"
 
@@ -26,14 +26,14 @@ project:
 # This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
 pinout:
   # Inputs
-  ui[0]: "Reserved PS/2 clock (receiver omitted)"
-  ui[1]: "Reserved PS/2 data (receiver omitted)"
+  ui[0]: "PS/2 clock (requires PS/2 PMOD)"
+  ui[1]: "PS/2 data (requires PS/2 PMOD)"
   ui[2]: "GPIO0 input"
   ui[3]: "GPIO1 input"
   ui[4]: "Gamepad PMOD latch input"
   ui[5]: "Gamepad PMOD clock input"
   ui[6]: "Gamepad PMOD data input"
-  ui[7]: "Reserved turbo input (no effect)"
+  ui[7]: "Reserved turbo input (not implemented)"
 
   # Outputs
   uo[0]: "VGA R1"
@@ -53,7 +53,7 @@ pinout:
   uio[4]: "Cartridge DQ2"
   uio[5]: "Cartridge DQ3"
   uio[6]: "PSRAM CS#"
-  uio[7]: "Mono PWM audio (two pulse + noise)"
+  uio[7]: "Mono PWM audio (4 PSG + ~8bit PCM)"
 
 # Do not change!
 yaml_version: 6
