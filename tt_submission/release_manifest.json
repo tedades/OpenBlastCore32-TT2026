@@ -1,0 +1,45 @@
+{
+  "release_top": "tt_um_openblastcore32_tt16",
+  "rtl_source_digest": "f7a45d274bb9037fac01f8771eb8bc0dd093785ba1525918016902ce613f64dc",
+  "rtl_source_sha256": {
+    "cpu.v": "8ee09c36f7e9f94afbd17afd7fa91bb1d21c5e6d0af8d12b05d4c59e0698790a",
+    "dma.v": "9367db5d521bf9d12b8c54ae967acbd3ace15128f8fda72243606cc65ff8a561",
+    "gamepad_pmod.v": "1b02f969841da6f07f96e726000d64ccf2621e453db4c237247c231a16506a80",
+    "handoff.v": "227fab30ab72c0b1f663ac2e805c8bef6bf46e64cd3826b965d16af49955171c",
+    "memory_bridge.v": "e25f22f1da973b34d1803052e7b9dda2a232849c2d4b7d8eb55b3d37a4af1ab2",
+    "multiplier.v": "a77512f9debd3a0bc93d10c3613a4013a603af234aaed1af178c81037ba5d0e9",
+    "mux.v": "90c3ed34df46ac28e156bde533de3a9ab19ba599d03f04d9c8597b35f734b670",
+    "pcm_tile.v": "a03ef0166ff38979b4089cfd3b4a0723b7084ecf73a456be08f8ca5a7f29c7e8",
+    "phase2_gamepad_io.v": "98fc47248c8182364eef20569fc676643b3ef7d02097fb85a87c5492303949c3",
+    "phase2_ps2.v": "c69e8ac93a4be9b1aa571a582001a9e5893cd3468cca7e79b81e384b6508898d",
+    "phase2_psg.v": "462736919f623edfc9c0294cc26bcf2b44cbb112268172b7e90168593c624187",
+    "phase2_vga_pattern.v": "e872a3da76400e8651cd919d7cb878837e85a75a310af23b340c36b7bf447522",
+    "psram_quad.v": "4ed2a33a5716401d0dc7d9f08e135ceb00368c891a6d3060cbe71f941654d6c0",
+    "replay.v": "78856d2ef54aa90a614127735796fa82fa2bdbbd87533866dfd1a5db8cdba662",
+    "scanout.v": "e8831f4312321bd235a3684275d1703f50ff5c12d54559b06e6dec67f3afa1fb",
+    "scanout_runtime.v": "c0c81d91337f50565015316ce8bf7ce8c5adb36a07f881291800992de446770f",
+    "scratchpad.v": "76cd82aecf668049c8bb380c13e6d5899789ceaee68065f6816e373b881bd7c3",
+    "service.v": "a53acfd92013800a17ef422ac42800dcca125a28ac7abe025ed951c8d9e1db3d",
+    "timer_irq.v": "5e8eb0d148920e63ba6068a7f5ab1c36233963c3a4a1eeb1f6cc3733521e85ac",
+    "top.v": "18f427454666bf9fe3f4a363fb527dc36954a499770939b83ec1db2c87df87ef"
+  },
+  "project_file_sha256": {
+    "LICENSE": "8486a10c4393cee1c25392769ddd3b2d6c242d6ec7928e1414efff7dfb2f07ef",
+    "docs/info.md": "51561c4e3357a755e7b7ef97d26daff242788def5f4791f006ae017515206dc8",
+    "info.yaml": "d70489013b9290e57974d39bf9fdc4afd6af1cd846a9bf88ef6fdfcdae2acb5a",
+    "src/vendor/gamepad_pmod/LICENSE-2.0.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  "submission_file_sha256": {
+    "pdk.json": "ce17ddee0d7971e8e6dd7399326ad86dfde273a5daa8f69efb9c617b181a913a",
+    "resolved.json": "2ab662ad93914c449182d65a622e57e07e57a70f180b1d54f28623f84f97268a",
+    "stats/metrics.csv": "d2c34732349d5d63d98bcfe87999e4bcb0f58aaf0a9d9dd07c3f9bae8960fb69",
+    "stats/synthesis-stats.txt": "33af411258c38caf9d11759a5011722f85e1f4f27a81c544b84508cfc350fa5c",
+    "tt_um_openblastcore32_tt16.gds": "35d2a727e3da4baed862d073996a85ab2fb394c916ed31f11f521e54ebe4b539",
+    "tt_um_openblastcore32_tt16.lef": "bed4087303f5051b88382040553c143f4967bdb1128c044e7da76ece6030938e",
+    "tt_um_openblastcore32_tt16.max.spef": "c9f6a2ef63d93c947e20ff3e5c1d6c89512e564a3aff80d131a129dfbd91f2cc",
+    "tt_um_openblastcore32_tt16.min.spef": "caf35e1d5a969ae9b315c2fdfb3d65c69049e64622e6b103d5cc8af6d2a611f6",
+    "tt_um_openblastcore32_tt16.nom.spef": "c1c4268ae97642fc63ed7d13072b1ef017b3babc5c5a3b6e07f41cd39920f8a7",
+    "tt_um_openblastcore32_tt16.oas": "d55681d1e942f52b16826f229f8c4ae697ddd1663baf7aea9ef9d8e48e931158",
+    "tt_um_openblastcore32_tt16.v": "633cd9b31c308405ce95e82056c232c89a92bad5ffb723aca95b01b75ec791f0"
+  }
+}

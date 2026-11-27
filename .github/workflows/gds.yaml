@@ -1,0 +1,72 @@
+name: gds
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  gds:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+
+      - name: Install verification dependency
+        run: python -m pip install PyYAML==6.0.1
+
+      - name: Verify release package
+        run: python scripts/verify_release.py
+
+      - name: Add packaging provenance (existing GDS is not rebuilt)
+        env:
+          REPO_URL: ${{ github.server_url }}/${{ github.repository }}
+          COMMIT_SHA: ${{ github.sha }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+
+          metadata = {
+              "app": "prebuilt GDS verification and packaging workflow",
+              "repo": os.environ["REPO_URL"],
+              "commit": os.environ["COMMIT_SHA"],
+              "workflow_url": os.environ["RUN_URL"],
+          }
+          path = Path("tt_submission/commit_id.json")
+          path.write_text(json.dumps(metadata, indent=2) + "\n", encoding="utf-8")
+          print(path.read_text(encoding="utf-8"))
+          PY
+
+      - name: Publish submission artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: tt_submission
+          path: |
+            tt_submission/**
+            docs/info.md
+            info.yaml
+            LICENSE
+            src/**
+          if-no-files-found: error
+
+  precheck:
+    needs: gds
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - name: Run Tiny Tapeout Precheck
+        uses: TinyTapeout/tt-gds-action/precheck@395eedb3eeec3c2f4961c3b04ff2cf87f5525636
+        with:
+          tools-ref: 7d2d2ef5261eb1df16d0bc342834d48a8a276881

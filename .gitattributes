@@ -1,0 +1,5 @@
+src/** -text
+info.yaml -text
+tt_submission/** -text
+LICENSE -text
+docs/info.md -text
